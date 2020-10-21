@@ -22,12 +22,7 @@ void loop() {
     switch(fenyero)
     {
       case 255:
-        Serial.println("100%->75%");
-        fenyero = 192;
-        Serial.println(fenyero);
-        break;
-      case 192:
-        Serial.println("75%->50%");
+        Serial.println("100%->50%");
         fenyero = 128;
         Serial.println(fenyero);
         break;
@@ -42,7 +37,12 @@ void loop() {
         Serial.println(fenyero);
         break;
       case 32:
-        Serial.println("12%->0%");
+        Serial.println("12%->7%");
+        fenyero = 16;
+        Serial.println(fenyero);
+        break;
+      case 16:
+        Serial.println("7%->0%");
         fenyero = 0;
         Serial.println(fenyero);
         break;
@@ -57,6 +57,7 @@ void loop() {
         fenyero = 255;
     }
     EEPROM.update(1, fenyero);
-    delay(500);
+    analogWrite(LEDSZALAG, fenyero);
+    delay(1000);
   }
 }
