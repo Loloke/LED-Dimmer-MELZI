@@ -42,7 +42,12 @@ void loop() {
         Serial.println(fenyero);
         break;
       case 16:
-        Serial.println("7%->0%");
+        Serial.println("7%->3%");
+        fenyero = 8;
+        Serial.println(fenyero);
+        break;
+      case 8:
+        Serial.println("3%->0%");
         fenyero = 0;
         Serial.println(fenyero);
         break;
